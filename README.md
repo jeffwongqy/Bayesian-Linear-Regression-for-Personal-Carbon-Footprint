@@ -1,1 +1,1 @@
-# Bayesian-Regression-for-Personal-Carbon-Footprint-
+# Bayesian-Regression-for-Personal-Carbon-Footprint
