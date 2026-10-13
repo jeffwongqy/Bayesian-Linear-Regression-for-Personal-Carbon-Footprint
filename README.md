@@ -40,6 +40,7 @@ Bayesian regression is a probabilistic approach to linear regression where stati
 
 <img width="830" height="751" alt="PPC2" src="https://github.com/user-attachments/assets/155cdec8-9c6c-4e7b-8f0b-030f4c03e1b0" />
 
+- The interval bounds for the first five data points are remarkbly consistent across all three models. For instance, the first observation's lower ETI bounds are nearly identical, and upper bounds range similarly near 5.56 to 5.60. This demonstrates that applying Ridge or Lasso regularizing priors introduces negligible variation in the predictive uncertainity distributions compared to the unstandardized baseline.
 - 
 
 ## 8. Coefficients Interpretation
