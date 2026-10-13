@@ -29,6 +29,10 @@ Bayesian regression is a probabilistic approach to linear regression where stati
 
 ## 7. Posterior Predictive Checks
 
+<img width="1397" height="481" alt="PPC" src="https://github.com/user-attachments/assets/fea52f36-5f67-465c-8b7d-6ce69cfe3963" />
+
+
+
 ## 8. Coefficients Interpretation
 
 ## 9. Conclusion
