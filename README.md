@@ -6,7 +6,9 @@
 Bayesian regression is a probabilistic approach to linear regression where statistical inference is placed within the context of Bayesian statistics. Instead of computing single point estimates (such as Ordinary Least Squares), parameters (coefficients and error variance) are treated as random variables characterized by probability distributions. By incorporating prior beliefs and updating them using observed data via Bayes' Theorem, Bayesian regression produces posterior distributions that quantify parameter uncertainty, naturally guard against overfitting through regularization priors, and facilitate robust predictions. 
 
 ## 2. Scopes
-
+* Environmental and sustainability analytics, specifically modeling personal carbon footprint metrics based on behavioural, lifestyle, and resource usage indicators.
+* Comparative analysis of three Bayesian regression formulations: Original Bayesian Regression, Bayesian Ridge Regression, and bayesian Lasso Regression.
+* 
 ## 3. Objectives
 
 ## 4. Bayes Theorem Principles
