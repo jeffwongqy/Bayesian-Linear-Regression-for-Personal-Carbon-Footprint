@@ -44,8 +44,10 @@ Bayesian regression is a probabilistic approach to linear regression where stati
 - The interval widths reflect the inherent residual variance captured by the models, providing robust upper and lower bounds for individual personal carbon footprint predictions at a 95% confidence level.
 
 
-
 ## 8. Coefficients Interpretation
+
+<img width="1357" height="756" alt="model_coefficients" src="https://github.com/user-attachments/assets/ddb721f1-88b6-44ea-b755-903966ccb507" />
+
 
 ## 9. Conclusion
 
