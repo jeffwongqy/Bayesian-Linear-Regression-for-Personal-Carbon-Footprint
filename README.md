@@ -36,11 +36,11 @@ Bayesian regression is a probabilistic approach to linear regression where stati
 - The peak density - centered around a caron footprint value of 7.5 to 8.0 is accurately captured by the posterior repliaces in all three variants. The dispersion, spread, and overall bell-shaped contour closely mirror the empirical distribution.
 - There are visible graphical discrepancies or structural differences among the Standard, Ridge, and Lasso PPC plots.
 
-### PPC HDIs and ETIs
+### 7.2 PPC HDIs and ETIs
 
 <img width="830" height="751" alt="PPC2" src="https://github.com/user-attachments/assets/155cdec8-9c6c-4e7b-8f0b-030f4c03e1b0" />
 
-
+- 
 
 ## 8. Coefficients Interpretation
 
