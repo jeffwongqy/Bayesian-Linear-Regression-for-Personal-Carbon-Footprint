@@ -33,7 +33,26 @@ where:
 ### 4.1 Setting Up the Linear Model
 Mathematically, a Bayesian regression model connects inputs (X) to an output (y) using probability distribution. We assume that the target variable $y_{i}$ follows a Normal (Gaussian) distribution around a mean $\mu_{i}$: 
 
-$$y_{i} ~ N(\mu_i, \sigma^{2})$$
+$$y_{i} \sim N(\mu_i, \sigma^{2})$$
+
+The mean $\mu_{i}$ is calculated using the standard linear combination of features, intercept $(\beta_{0})$ and coefficients $(\beta_{j})$:
+
+$$\mu_{i} = \beta_{0} + \sum^{k}_{j=1} X_{ij}\beta_{j}$$
+
+### 4.2 Adding Priors for Regularization 
+To prevent overfitting and handle noisy data, we assign prior distributions to the coefficients $(\beta)$:
+
+#### 4.2.1 Normal Priors (L2 Regularization):
+
+$$\beta_{j} \sim N(0, \sigma^{2}_{\beta})$$
+
+This shrinks large coefficients smoothly toward zero, assuming most effects are small. 
+
+### 4.2.2 Laplce Priors (L1 Regularization):
+
+$$\beta_{j} \sim Laplce(0, b)$$
+
+This pushes uninformative coefficients strictly to zero, effectively performing feature selection. 
 
 ## 5. Bayesian Regression Implementation Codes
 
