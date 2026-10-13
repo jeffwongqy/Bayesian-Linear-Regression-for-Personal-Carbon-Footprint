@@ -11,8 +11,15 @@ Bayesian regression is a probabilistic approach to linear regression where stati
 * Assessment via model performance (R2, MSE, RMSE, MAE), posterior predictive checks, and coefficient parameter interpretation.
 
 ## 3. Objectives
+- Formulate and fit Bayesian linear regression models using Markov Chain Monte Carlo (MCMC) sampling.
+- Examine the mathematical forundations governing Bayesian inference and prior regularization.
+- Compare model predictive accuracy and error metrics across the model variants.
+- Interpret posterior distributions, credible intervals, and regression coefficients to derive actionable insights without relying on preprocessing steps.
 
 ## 4. Bayes Theorem Principles
+<img width="1142" height="361" alt="results" src="https://github.com/user-attachments/assets/c3cfb107-1b5b-49f7-a406-4d4e0b0fd702" />
+
+
 
 ## 5. Bayesian Regression Implementation Codes
 
