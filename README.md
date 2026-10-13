@@ -19,7 +19,10 @@ Bayesian regression is a probabilistic approach to linear regression where stati
 ## 4. Bayes' Theorem 
 At the heart of the method is Bayes' Theorem, which updates our initial assumptions using observed data: 
 
+
+```
 P(\theta | D) = \frac{P(D | \theta) P(\theta)}{P(D)}
+```
 
 where:
 - P(\theta) (Prior): 
