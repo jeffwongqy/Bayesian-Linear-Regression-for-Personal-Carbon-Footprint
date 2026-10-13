@@ -24,7 +24,8 @@ Bayesian regression is a probabilistic approach to linear regression where stati
 
 <img width="1142" height="361" alt="results" src="https://github.com/user-attachments/assets/c3cfb107-1b5b-49f7-a406-4d4e0b0fd702" />
 
-- All three models demonstrate strong generalization performance on the test set, explanining over 92% of the variance in personal carbon footprint. 
+- All three models demonstrate strong generalization performance on the test set, explanining over 92% of the variance in personal carbon footprint.
+- The standard unregularized Bayesian regression model slgihtly outperforms the regularized Ridge and Lasso variants across all metrics on this particular test split (achieving a lower MAE, lower RMSE, and higher R2). However, the performance differences between the three models are minimal, indicating that the feature space does not suffer from extreme multicollinearity requiring heavy shrinkage. 
 
 ## 7. Posterior Predictive Checks
 
