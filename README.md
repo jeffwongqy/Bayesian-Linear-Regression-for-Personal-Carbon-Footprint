@@ -21,11 +21,19 @@ At the heart of the method is Bayes' Theorem, which updates our initial assumpti
 
 
 
-$P(\theta | D) = \frac{P(D | \theta) P(\theta)}{P(D)}$
+$$P(\theta | D) = \frac{P(D | \theta) P(\theta)}{P(D)}$$
 
 
 where:
-- P(\theta) (Prior): 
+- $P(\theta)$ (Prior): What we believe about the parameters $\theta$ before looking at the data
+- $P(D | \theta)$ (Likelihood): The probability of seeing our actual data given specific parameter values.
+- $P(\theta | D)$ (Posterior): Our updated belief about the parameters after combining our prior knowledge with the observed data.
+- $P(D)$ (Evidence): A normaliing constant representing the total probability of the data.
+
+### 4.1 Setting Up the Linear Model
+Mathematically, a Bayesian regression model connects inputs (X) to an output (y) using probability distribution. We assume that the target variable $y_{i}$ follows a Normal (Gaussian) distribution around a mean $\mu_{i}$: 
+
+$$y_{i} ~ N(\mu_i, \sigma^{2})$$
 
 ## 5. Bayesian Regression Implementation Codes
 
