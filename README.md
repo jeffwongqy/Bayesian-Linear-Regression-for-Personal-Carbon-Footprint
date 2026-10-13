@@ -16,7 +16,13 @@ Bayesian regression is a probabilistic approach to linear regression where stati
 - Compare model predictive accuracy and error metrics across the model variants.
 - Interpret posterior distributions, credible intervals, and regression coefficients to derive actionable insights without relying on preprocessing steps.
 
-## 4. Bayes Theorem Principles
+## 4. Bayes' Theorem 
+At the heart of the method is Bayes' Theorem, which updates our initial assumptions using observed data: 
+
+P(\theta | D) = \frac{P(D | \theta) P(\theta)}{P(D)}
+
+where:
+- P(\theta) (Prior): 
 
 ## 5. Bayesian Regression Implementation Codes
 
@@ -52,8 +58,10 @@ Bayesian regression is a probabilistic approach to linear regression where stati
 
 
 ## 9. Conclusion
+- All three models achieved exceptional generalisation capability on the test set, explaining over 92% of the variance with low error metrics such as MAE and RMSE.
+- Posterior diagnostics confirmed reliable sampling behaviour, with all parameters achieving optimal convergence and high effective sample sizes.
+- The introduction of Ridge and Lasso regularizing priors produced nearly identical coefficient estimates and predictive intervals compared to the unregularized Standard Bayesian model, indicating a well-conditioned feature space free of severe multicollinearity.
 
-## 10. Future Works
 
 ## 11. Datasets
 https://www.kaggle.com/datasets/sonalshinde123/personal-carbon-footprint-behavior-dataset 
