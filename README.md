@@ -48,6 +48,8 @@ Bayesian regression is a probabilistic approach to linear regression where stati
 
 <img width="1357" height="756" alt="model_coefficients" src="https://github.com/user-attachments/assets/ddb721f1-88b6-44ea-b755-903966ccb507" />
 
+- The posterior means, standard deviations, and 94% highest density intervals for all coefficients and intercepts across the Standard, Ridge, and Lasso bayesian regression models are virtually identical, indicating that the choice of regularizing prior had a negligible impact on coefficient shrinkage for this dataset.
+
 
 ## 9. Conclusion
 
