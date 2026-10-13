@@ -29,11 +29,17 @@ Bayesian regression is a probabilistic approach to linear regression where stati
 
 ## 7. Posterior Predictive Checks
 
+### 7.1 PPC Plot
 <img width="1397" height="481" alt="PPC" src="https://github.com/user-attachments/assets/fea52f36-5f67-465c-8b7d-6ce69cfe3963" />
 
 - Across all three models (Standard, Ridge, and Lasso bayesian Regression), the posterior predictive distributions (blue lines) and their mean (orange dashed curve) track the observed data distribution (solid black curve) remarkbly well. This indicates that the models have successfully captured the underlying data-generating process for personal carbon footprints.
 - The peak density - centered around a caron footprint value of 7.5 to 8.0 is accurately captured by the posterior repliaces in all three variants. The dispersion, spread, and overall bell-shaped contour closely mirror the empirical distribution.
-- There are visible graphical discrepancies or structural differences among the Standard, Ridge, and Lasso PPC plots. 
+- There are visible graphical discrepancies or structural differences among the Standard, Ridge, and Lasso PPC plots.
+
+### PPC HDIs and ETIs
+
+<img width="830" height="751" alt="PPC2" src="https://github.com/user-attachments/assets/155cdec8-9c6c-4e7b-8f0b-030f4c03e1b0" />
+
 
 
 ## 8. Coefficients Interpretation
