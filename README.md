@@ -8,7 +8,8 @@ Bayesian regression is a probabilistic approach to linear regression where stati
 ## 2. Scopes
 * Environmental and sustainability analytics, specifically modeling personal carbon footprint metrics based on behavioural, lifestyle, and resource usage indicators.
 * Comparative analysis of three Bayesian regression formulations: Original Bayesian Regression, Bayesian Ridge Regression, and bayesian Lasso Regression.
-* 
+* Assessment via model performance (R2, MSE, RMSE, MAE), posterior predictive checks, and coefficient parameter interpretation.
+
 ## 3. Objectives
 
 ## 4. Bayes Theorem Principles
