@@ -17,32 +17,35 @@ Bayesian regression is a probabilistic approach to linear regression where stati
 - Interpret posterior distributions, credible intervals, and regression coefficients to derive actionable insights without relying on preprocessing steps.
 
 ## 4. Bayesian Linear Regression: Mathematical Formulas and Python Code
-| Bayesian concept	| Mathematical formula	| Python code	| Brief meaning
-Prior: Intercept	| \(\beta_0\sim N(0,10^2)\)	| pm.Normal("intercept", mu=0, sigma=10)	| Sets the initial assumption about the regression intercept before observing the data.
-2. Prior: Regression coefficients	\(\beta_j\sim N(0,10^2)\)	pm.Normal("beta", mu=0, sigma=10, shape=X_train.shape[1])	Sets initial assumptions about the coefficients for each input variable, such as electricity and transportation.
-3. Prior: Standard deviation	\(\sigma\sim HalfNormal(1)\)	pm.HalfNormal("sigma", sigma=1)	Defines the prior distribution of the regression error's standard deviation. It must be positive.
-4. Linear regression equation	\(\mu_i=\beta_0+\sum_{j=1}^{p}x_{ij}\beta_j\)	mu = intercept + pm.math.dot(X_train, beta)	Calculates the predicted carbon footprint using the input variables and regression coefficients.
-5. Likelihood function	\(y_i\sim N(\mu_i,\sigma^2)\)	pm.Normal("carbon_footprint", mu=mu, sigma=sigma, observed=y_train)	Measures how likely the observed carbon footprint data are, given the predicted values and model parameters.
-6. Posterior distribution (Bayes' Theorem)	\(\displaystyle P(\theta\mid D)=\frac{P(D\mid\theta)P(\theta)}{P(D)}\)	trace = pm.sample(2000, tune=1000, cores=2, random_state=42, return_inferencedata=True)	Updates the prior beliefs using the observed data to estimate the posterior distributions of the model parameters.
-7. Posterior predictive distribution	\(\displaystyle P(y_{\text{new}}\mid D)=\int P(y_{\text{new}}\mid\theta)P(\theta\mid D)d\theta\)	pm.sample_posterior_predictive(trace, extend_inferencedata=True)	Generates predicted carbon footprint values using posterior samples while accounting for uncertainty.
 
-## 6. Model Comparison Results
+| Bayesian Concept | Mathematical Formula | Python Code | Brief Meaning |
+| :--- | :--- | :--- | :--- |
+| **1. Prior: Intercept** | β₀ ~ N(0, 10²) | `pm.Normal("intercept", mu=0, sigma=10)` | Sets the initial assumption about the regression intercept before observing the data. |
+| **2. Prior: Regression coefficients** | \(\beta_j \sim N(0, 10^2)\) | `pm.Normal("beta", mu=0, sigma=10, shape=X_train.shape[1])` | Sets initial assumptions about the coefficients for each input variable, such as electricity and transportation. |
+| **3. Prior: Standard deviation** | σ ~ HalfNormal(1) | `pm.HalfNormal("sigma", sigma=1)` | Defines the prior distribution of the regression error's standard deviation. It must be positive. |
+| **4. Linear regression equation** | \(\mu_i = \beta_0 + \sum_{j=1}^{p}x_{ij}\beta_j\) | `mu = intercept + pm.math.dot(X_train, beta)` | Calculates the predicted carbon footprint using the input variables and regression coefficients. |
+| **5. Likelihood function** | \(y_i \sim N(\mu_i, \sigma^2)\) | `pm.Normal("carbon_footprint", mu=mu, sigma=sigma, observed=y_train)` | Measures how likely the observed carbon footprint data are, given the predicted values and model parameters. |
+| **6. Posterior distribution (Bayes' Theorem)** | \(\displaystyle P(\theta \mid D) = \frac{P(D \mid \theta)P(\theta)}{P(D)}\) | `trace = pm.sample(2000, tune=1000, cores=2, random_state=42, return_inferencedata=True)` | Updates the prior beliefs using the observed data to estimate the posterior distributions of the model parameters. |
+| **7. Posterior predictive distribution** | \(\displaystyle P(y_{\text{new}} \mid D) = \int P(y_{\text{new}} \mid \theta)P(\theta \mid D)d\theta\) | `pm.sample_posterior_predictive(trace, extend_inferencedata=True)` | Generates predicted carbon footprint values using posterior samples while accounting for uncertainty. |
+
+
+## 5. Model Comparison Results
 
 <img width="800" height="250" alt="results" src="https://github.com/user-attachments/assets/c3cfb107-1b5b-49f7-a406-4d4e0b0fd702" />
 
 - All three models demonstrate strong generalization performance on the test set, explanining over 92% of the variance in personal carbon footprint.
 - The standard unregularized Bayesian regression model slgihtly outperforms the regularized Ridge and Lasso variants across all metrics on this particular test split (achieving a lower MAE, lower RMSE, and higher R2). However, the performance differences between the three models are minimal, indicating that the feature space does not suffer from extreme multicollinearity requiring heavy shrinkage. 
 
-## 7. Posterior Predictive Checks
+## 6. Posterior Predictive Checks
 
-### 7.1 PPC Plot
+### 6.1 PPC Plot
 <img width="1397" height="481" alt="PPC" src="https://github.com/user-attachments/assets/fea52f36-5f67-465c-8b7d-6ce69cfe3963" />
 
 - Across all three models (Standard, Ridge, and Lasso bayesian Regression), the posterior predictive distributions (blue lines) and their mean (orange dashed curve) track the observed data distribution (solid black curve) remarkbly well. This indicates that the models have successfully captured the underlying data-generating process for personal carbon footprints.
 - The peak density - centered around a carbon footprint value of 7.5 to 8.0 is accurately captured by the posterior repliaces in all three variants. The dispersion, spread, and overall bell-shaped contour closely mirror the empirical distribution.
 - There are visible graphical discrepancies or structural differences among the Standard, Ridge, and Lasso PPC plots.
 
-### 7.2 PPC HDIs and ETIs
+### 6.2 PPC HDIs and ETIs
 
 <img width="830" height="751" alt="PPC2" src="https://github.com/user-attachments/assets/155cdec8-9c6c-4e7b-8f0b-030f4c03e1b0" />
 
@@ -50,14 +53,14 @@ Prior: Intercept	| \(\beta_0\sim N(0,10^2)\)	| pm.Normal("intercept", mu=0, sigm
 - The interval widths reflect the inherent residual variance captured by the models, providing robust upper and lower bounds for individual personal carbon footprint predictions at a 95% confidence level.
 
 
-## 8. Coefficients Interpretation
+## 7. Coefficients Interpretation
 
 <img width="1357" height="756" alt="model_coefficients" src="https://github.com/user-attachments/assets/ddb721f1-88b6-44ea-b755-903966ccb507" />
 
 - The posterior means, standard deviations, and 94% highest density intervals for all coefficients and intercepts across the Standard, Ridge, and Lasso bayesian regression models are virtually identical, indicating that the choice of regularizing prior had a negligible impact on coefficient shrinkage for this dataset.
 
 
-## 9. Conclusion
+## 8. Conclusion
 - All three models achieved exceptional generalisation capability on the test set, explaining over 92% of the variance with low error metrics such as MAE and RMSE.
 - Posterior diagnostics confirmed reliable sampling behaviour, with all parameters achieving optimal convergence and high effective sample sizes.
 - The introduction of Ridge and Lasso regularizing priors produced nearly identical coefficient estimates and predictive intervals compared to the unregularized Standard Bayesian model, indicating a well-conditioned feature space free of severe multicollinearity.
