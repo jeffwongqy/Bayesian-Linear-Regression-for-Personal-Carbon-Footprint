@@ -30,7 +30,7 @@ where:
 
 | Bayesian Concept | Mathematical Formula | Python Code | Brief Meaning |
 | :--- | :--- | :--- | :--- |
-| **Prior: Intercept** | $\beta_{o} ~ N(0, 10²)$ | `pm.Normal("intercept", mu=0, sigma=10)` | Sets the initial assumption about the regression intercept before observing the data. |
+| **Prior: Intercept** | $\beta_{o} \sim N(0, 10²)$ | `pm.Normal("intercept", mu=0, sigma=10)` | Sets the initial assumption about the regression intercept before observing the data. |
 | **Prior: Regression coefficients** | $\beta_{j} \sim N(0, 10^{2})$ | `pm.Normal("beta", mu=0, sigma=10, shape=X_train.shape[1])` | Sets initial assumptions about the coefficients for each input variable, such as electricity and transportation. |
 | **Prior: Standard deviation** | $\sigma \sim HalfNormal(1)$ | `pm.HalfNormal("sigma", sigma=1)` | Defines the prior distribution of the regression error's standard deviation. It must be positive. |
 | **Linear regression equation** | $\mu_{i} = \beta_{0} + \sum_{j=1}^{p}x_{ij}\beta_{j}$ | `mu = intercept + pm.math.dot(X_train, beta)` | Calculates the predicted carbon footprint using the input variables and regression coefficients. |
