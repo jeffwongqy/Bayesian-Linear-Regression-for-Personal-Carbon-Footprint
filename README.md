@@ -49,10 +49,10 @@ In fact, Ridge and Lasso can be interpreted from a Bayesian perspective by **cho
 <img width="800" height="250" alt="results" src="https://github.com/user-attachments/assets/c3cfb107-1b5b-49f7-a406-4d4e0b0fd702" />
 
 - All three models demonstrate very similar predictive performance, with only negligible differences across the evaluation metrics.
-(a) Standard Bayesian Regression performs slightly best overall, achieving the lowest MAE (0.5930) and MSE (0.5805), the highest R² (0.9231), and a low RMSE (0.7619).
-(b) Bayesian Ridge Regression has marginally higher errors and a slightly lower R² (0.9230), indicating comparable predictive accuracy.
-(c) Bayesian Lasso Regression also performs similarly, with an RMSE of 0.7620 and R² of 0.9230.
-Overall, the standard Bayesian Regression achieves the best numerical results, but the differences are extremely small. All three models explain approximately 92.3% of the variance in the target variable, suggesting that Ridge and Lasso regularisation provide no meaningful improvement in predictive accuracy for this dataset.
+- Standard Bayesian Regression performs slightly best overall, achieving the lowest MAE (0.5930) and MSE (0.5805), the highest R² (0.9231), and a low RMSE (0.7619).
+- Bayesian Ridge Regression has marginally higher errors and a slightly lower R² (0.9230), indicating comparable predictive accuracy.
+- Bayesian Lasso Regression also performs similarly, with an RMSE of 0.7620 and R² of 0.9230.
+- Overall, the standard Bayesian Regression achieves the best numerical results, but the differences are extremely small. All three models explain approximately 92.3% of the variance in the target variable, suggesting that Ridge and Lasso regularisation provide no meaningful improvement in predictive accuracy for this dataset.
 
 ## 5. Posterior Predictive Checks
 
