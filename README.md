@@ -40,6 +40,11 @@ where:
 
 All in all, the PyMC model defines the prior distributions and likelihood. Bayes' Theorem determines the posterior distribution, while pm.sample() uses MCMC to approximate that posterior distribution.
 
+**Lasso** and **Ridge Regression** can also be connected to Bayesian Linear Regression. The key difference is that Lasso and Ridge use **regularisation** to control regression coefficients, while Bayesian Regression uses **prior probability distributions** to influence the coefficients.
+
+In fact, Ridge and Lasso can be interpreted from a Bayesian perspective by **choosing different prior distributions for the regression coefficients**.
+
+
 
 ## 5. Model Comparison Results
 
