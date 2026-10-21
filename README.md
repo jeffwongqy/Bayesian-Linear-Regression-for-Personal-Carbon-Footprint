@@ -38,6 +38,8 @@ where:
 | **Posterior distribution (Bayes' Theorem)** | $P (\theta \mid D) = \frac{P(D \mid \theta) P(\theta)}{P(D)}$ | `trace = pm.sample(2000, tune=1000, cores=2, random_state=42, return_inferencedata=True)` | Updates the prior beliefs using the observed data to estimate the posterior distributions of the model parameters. |
 | **Posterior predictive distribution** | $P(y_{new} \mid D) = \int P(y_{new} \mid \theta) P(\theta \mid D) d\theta$ | `pm.sample_posterior_predictive(trace, extend_inferencedata=True)` | Generates predicted carbon footprint values using posterior samples while accounting for uncertainty. |
 
+All in all, the PyMC model defines the prior distributions and likelihood. Bayes' Theorem determines the posterior distribution, while pm.sample() uses MCMC to approximate that posterior distribution.
+
 
 ## 5. Model Comparison Results
 
