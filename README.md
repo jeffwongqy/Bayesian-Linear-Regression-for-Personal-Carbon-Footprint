@@ -18,6 +18,16 @@ Bayesian regression is a probabilistic approach to linear regression where stati
 
 ## 4. Bayesian Linear Regression: Mathematical Formulas and Python Code
 
+The most important formula connecting your entire Python implementation to Bayes' Theorem is:
+
+$$P(\theta \mid D) = \frac{P(D \mid \theta) P(\theta)}{P(D)}$$
+
+where:
+- Prior $P(\theta)$: Initial assumptions about the regression parameters.
+- Likelihood $P(D \mid \theta)$: Probability of observing the actual carbon footprint data given the parameters.
+- Evidence $P(D)$: Overall probability of observing the data.
+- Posterior $P(\theta \mid D)$: Updated probability distribution of the regression parameters after considering the observed data.
+
 | Bayesian Concept | Mathematical Formula | Python Code | Brief Meaning |
 | :--- | :--- | :--- | :--- |
 | **Prior: Intercept** | $\beta_{o} ~ N(0, 10²)$ | `pm.Normal("intercept", mu=0, sigma=10)` | Sets the initial assumption about the regression intercept before observing the data. |
