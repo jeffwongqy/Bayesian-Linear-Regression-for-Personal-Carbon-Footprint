@@ -3,7 +3,9 @@
 <img width="768" height="354" alt="footprint-graphic-shutterstock_1608534475-scaled-e1643965744134-768x354" src="https://github.com/user-attachments/assets/8759115c-a6a6-47c1-8313-f32b66b16043" />
 
 ## 1. Introduction
-Bayesian regression is a probabilistic approach to linear regression where statistical inference is placed within the context of Bayesian statistics. Instead of computing single point estimates (such as Ordinary Least Squares), parameters (coefficients and error variance) are treated as random variables characterized by probability distributions. By incorporating prior beliefs and updating them using observed data via Bayes' Theorem, Bayesian regression produces posterior distributions that quantify parameter uncertainty, naturally guard against overfitting through regularization priors, and facilitate robust predictions. 
+Bayesian Regression is a probabilistic approach to linear regression that applies the principles of Bayesian statistics to statistical modelling and inference. Unlike traditional methods such as Ordinary Least Squares (OLS), which estimate model parameters as fixed values, Bayesian Regression treats the regression coefficients (β) and error variance (σ²) as random variables described by probability distributions.
+
+By incorporating prior knowledge or assumptions about the model parameters and updating them with observed data through Bayes' Theorem, Bayesian Regression produces posterior probability distributions that quantify the uncertainty associated with each parameter. This approach provides a natural form of regularisation through prior distributions, helping to control overfitting and improve model generalisation. Furthermore, the posterior distributions enable probabilistic predictions, allowing the model to estimate not only expected outcomes but also the uncertainty surrounding those predictions.
 
 ## 2. Scopes
 * Environmental and sustainability analytics, specifically modeling personal carbon footprint metrics based on behavioural, lifestyle, and resource usage indicators.
