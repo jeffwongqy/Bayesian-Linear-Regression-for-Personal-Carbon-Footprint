@@ -7,18 +7,14 @@ Bayesian Regression is a probabilistic approach to linear regression that applie
 
 By incorporating prior knowledge or assumptions about the model parameters and updating them with observed data through Bayes' Theorem, Bayesian Regression produces posterior probability distributions that quantify the uncertainty associated with each parameter. This approach provides a natural form of regularisation through prior distributions, helping to control overfitting and improve model generalisation. Furthermore, the posterior distributions enable probabilistic predictions, allowing the model to estimate not only expected outcomes but also the uncertainty surrounding those predictions.
 
-## 2. Scopes
-* Environmental and sustainability analytics, specifically modeling personal carbon footprint metrics based on behavioural, lifestyle, and resource usage indicators.
-* Comparative analysis of three Bayesian regression formulations: Original Bayesian Regression, Bayesian Ridge Regression, and bayesian Lasso Regression.
-* Assessment via model performance (R2, MSE, RMSE, MAE), posterior predictive checks, and coefficient parameter interpretation.
+## 2. Objectives
+- To formulate and implement Bayesian linear regression models using Markov Chain Monte Carlo (MCMC) sampling techniques.
+- To understand the mathematical foundations of Bayesian inference, including prior distributions, likelihood functions, posterior distributions, and prior-based regularisation.
+- To compare the predictive performance of Standard Bayesian Regression, Bayesian Ridge Regression, and Bayesian Lasso Regression using established evaluation metrics.
+- To interpret posterior distributions, credible intervals, and regression coefficients to identify the relationships between lifestyle factors and personal carbon footprint levels.
+- To investigate how different prior distributions influence parameter estimation, model regularisation, and predictive performance.
 
-## 3. Objectives
-- Formulate and fit Bayesian linear regression models using Markov Chain Monte Carlo (MCMC) sampling.
-- Examine the mathematical forundations governing Bayesian inference and prior regularization.
-- Compare model predictive accuracy and error metrics across the model variants.
-- Interpret posterior distributions, credible intervals, and regression coefficients to derive actionable insights without relying on preprocessing steps.
-
-## 4. Bayesian Linear Regression: Mathematical Formulas and Python Code
+## 3. Bayesian Linear Regression: Mathematical Formulas and Python Code
 
 The most important formula connecting your entire Python implementation to Bayes' Theorem is:
 
@@ -48,23 +44,23 @@ In fact, Ridge and Lasso can be interpreted from a Bayesian perspective by **cho
 
 
 
-## 5. Model Comparison Results
+## 4. Model Comparison Results
 
 <img width="800" height="250" alt="results" src="https://github.com/user-attachments/assets/c3cfb107-1b5b-49f7-a406-4d4e0b0fd702" />
 
 - All three models demonstrate strong generalization performance on the test set, explanining over 92% of the variance in personal carbon footprint.
 - The standard unregularized Bayesian regression model slgihtly outperforms the regularized Ridge and Lasso variants across all metrics on this particular test split (achieving a lower MAE, lower RMSE, and higher R2). However, the performance differences between the three models are minimal, indicating that the feature space does not suffer from extreme multicollinearity requiring heavy shrinkage. 
 
-## 6. Posterior Predictive Checks
+## 5. Posterior Predictive Checks
 
-### 6.1 PPC Plot
+### 5.1 PPC Plot
 <img width="1397" height="481" alt="PPC" src="https://github.com/user-attachments/assets/fea52f36-5f67-465c-8b7d-6ce69cfe3963" />
 
 - Across all three models (Standard, Ridge, and Lasso bayesian Regression), the posterior predictive distributions (blue lines) and their mean (orange dashed curve) track the observed data distribution (solid black curve) remarkbly well. This indicates that the models have successfully captured the underlying data-generating process for personal carbon footprints.
 - The peak density - centered around a carbon footprint value of 7.5 to 8.0 is accurately captured by the posterior repliaces in all three variants. The dispersion, spread, and overall bell-shaped contour closely mirror the empirical distribution.
 - There are visible graphical discrepancies or structural differences among the Standard, Ridge, and Lasso PPC plots.
 
-### 6.2 PPC HDIs and ETIs
+### 5.2 PPC HDIs and ETIs
 
 <img width="830" height="751" alt="PPC2" src="https://github.com/user-attachments/assets/155cdec8-9c6c-4e7b-8f0b-030f4c03e1b0" />
 
@@ -72,19 +68,19 @@ In fact, Ridge and Lasso can be interpreted from a Bayesian perspective by **cho
 - The interval widths reflect the inherent residual variance captured by the models, providing robust upper and lower bounds for individual personal carbon footprint predictions at a 95% confidence level.
 
 
-## 7. Coefficients Interpretation
+## 6. Coefficients Interpretation
 
 <img width="1357" height="756" alt="model_coefficients" src="https://github.com/user-attachments/assets/ddb721f1-88b6-44ea-b755-903966ccb507" />
 
 - The posterior means, standard deviations, and 94% highest density intervals for all coefficients and intercepts across the Standard, Ridge, and Lasso bayesian regression models are virtually identical, indicating that the choice of regularizing prior had a negligible impact on coefficient shrinkage for this dataset.
 
 
-## 8. Conclusion
+## 7. Conclusion
 - All three models achieved exceptional generalisation capability on the test set, explaining over 92% of the variance with low error metrics such as MAE and RMSE.
 - Posterior diagnostics confirmed reliable sampling behaviour, with all parameters achieving optimal convergence and high effective sample sizes.
 - The introduction of Ridge and Lasso regularizing priors produced nearly identical coefficient estimates and predictive intervals compared to the unregularized Standard Bayesian model, indicating a well-conditioned feature space free of severe multicollinearity.
 
 
-## 11. Datasets
+## 8. Datasets
 https://www.kaggle.com/datasets/sonalshinde123/personal-carbon-footprint-behavior-dataset 
 
