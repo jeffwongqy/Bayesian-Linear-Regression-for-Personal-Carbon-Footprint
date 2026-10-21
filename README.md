@@ -16,45 +16,15 @@ Bayesian regression is a probabilistic approach to linear regression where stati
 - Compare model predictive accuracy and error metrics across the model variants.
 - Interpret posterior distributions, credible intervals, and regression coefficients to derive actionable insights without relying on preprocessing steps.
 
-## 4. Bayes' Theorem 
-At the heart of the method is Bayes' Theorem, which updates our initial assumptions using observed data: 
-
-
-
-$$P(\theta | D) = \frac{P(D | \theta) P(\theta)}{P(D)}$$
-
-
-where:
-- $P(\theta)$ (Prior): What we believe about the parameters $\theta$ before looking at the data
-- $P(D | \theta)$ (Likelihood): The probability of seeing our actual data given specific parameter values.
-- $P(\theta | D)$ (Posterior): Our updated belief about the parameters after combining our prior knowledge with the observed data.
-- $P(D)$ (Evidence): A normaliing constant representing the total probability of the data.
-
-### 4.1 Setting Up the Linear Model
-Mathematically, a Bayesian regression model connects inputs (X) to an output (y) using probability distribution. We assume that the target variable $y_{i}$ follows a Normal (Gaussian) distribution around a mean $\mu_{i}$: 
-
-$$y_{i} \sim N(\mu_i, \sigma^{2})$$
-
-The mean $\mu_{i}$ is calculated using the standard linear combination of features, intercept $(\beta_{0})$ and coefficients $(\beta_{j})$:
-
-$$\mu_{i} = \beta_{0} + \sum^{k}_{j=1} X_{ij}\beta_{j}$$
-
-### 4.2 Adding Priors for Regularization 
-To prevent overfitting and handle noisy data, we assign prior distributions to the coefficients $(\beta)$:
-
-#### 4.2.1 Normal Priors (L2 Regularization):
-
-$$\beta_{j} \sim N(0, \sigma^{2}_{\beta})$$
-
-This shrinks large coefficients smoothly toward zero, assuming most effects are small. 
-
-### 4.2.2 Laplce Priors (L1 Regularization):
-
-$$\beta_{j} \sim Laplce(0, b)$$
-
-This pushes uninformative coefficients strictly to zero, effectively performing feature selection. 
-
-## 5. Bayesian Regression Implementation Codes
+## 4. Bayesian Linear Regression: Mathematical Formulas and Python Code
+Bayesian concept	Mathematical formula	Python code	Brief meaning
+1. Prior: Intercept	\(\beta_0\sim N(0,10^2)\)	pm.Normal("intercept", mu=0, sigma=10)	Sets the initial assumption about the regression intercept before observing the data.
+2. Prior: Regression coefficients	\(\beta_j\sim N(0,10^2)\)	pm.Normal("beta", mu=0, sigma=10, shape=X_train.shape[1])	Sets initial assumptions about the coefficients for each input variable, such as electricity and transportation.
+3. Prior: Standard deviation	\(\sigma\sim HalfNormal(1)\)	pm.HalfNormal("sigma", sigma=1)	Defines the prior distribution of the regression error's standard deviation. It must be positive.
+4. Linear regression equation	\(\mu_i=\beta_0+\sum_{j=1}^{p}x_{ij}\beta_j\)	mu = intercept + pm.math.dot(X_train, beta)	Calculates the predicted carbon footprint using the input variables and regression coefficients.
+5. Likelihood function	\(y_i\sim N(\mu_i,\sigma^2)\)	pm.Normal("carbon_footprint", mu=mu, sigma=sigma, observed=y_train)	Measures how likely the observed carbon footprint data are, given the predicted values and model parameters.
+6. Posterior distribution (Bayes' Theorem)	\(\displaystyle P(\theta\mid D)=\frac{P(D\mid\theta)P(\theta)}{P(D)}\)	trace = pm.sample(2000, tune=1000, cores=2, random_state=42, return_inferencedata=True)	Updates the prior beliefs using the observed data to estimate the posterior distributions of the model parameters.
+7. Posterior predictive distribution	\(\displaystyle P(y_{\text{new}}\mid D)=\int P(y_{\text{new}}\mid\theta)P(\theta\mid D)d\theta\)	pm.sample_posterior_predictive(trace, extend_inferencedata=True)	Generates predicted carbon footprint values using posterior samples while accounting for uncertainty.
 
 ## 6. Model Comparison Results
 
