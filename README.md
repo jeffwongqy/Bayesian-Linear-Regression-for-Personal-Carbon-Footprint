@@ -17,8 +17,8 @@ Bayesian regression is a probabilistic approach to linear regression where stati
 - Interpret posterior distributions, credible intervals, and regression coefficients to derive actionable insights without relying on preprocessing steps.
 
 ## 4. Bayesian Linear Regression: Mathematical Formulas and Python Code
-Bayesian concept	Mathematical formula	Python code	Brief meaning
-1. Prior: Intercept	\(\beta_0\sim N(0,10^2)\)	pm.Normal("intercept", mu=0, sigma=10)	Sets the initial assumption about the regression intercept before observing the data.
+| Bayesian concept	| Mathematical formula	| Python code	| Brief meaning
+Prior: Intercept	| \(\beta_0\sim N(0,10^2)\)	| pm.Normal("intercept", mu=0, sigma=10)	| Sets the initial assumption about the regression intercept before observing the data.
 2. Prior: Regression coefficients	\(\beta_j\sim N(0,10^2)\)	pm.Normal("beta", mu=0, sigma=10, shape=X_train.shape[1])	Sets initial assumptions about the coefficients for each input variable, such as electricity and transportation.
 3. Prior: Standard deviation	\(\sigma\sim HalfNormal(1)\)	pm.HalfNormal("sigma", sigma=1)	Defines the prior distribution of the regression error's standard deviation. It must be positive.
 4. Linear regression equation	\(\mu_i=\beta_0+\sum_{j=1}^{p}x_{ij}\beta_j\)	mu = intercept + pm.math.dot(X_train, beta)	Calculates the predicted carbon footprint using the input variables and regression coefficients.
