@@ -25,8 +25,8 @@ Bayesian regression is a probabilistic approach to linear regression where stati
 | **3. Prior: Standard deviation** | $\sigma \sim HalfNormal(1)$ | `pm.HalfNormal("sigma", sigma=1)` | Defines the prior distribution of the regression error's standard deviation. It must be positive. |
 | **4. Linear regression equation** | $\mu_{i} = \beta_{0} + \sum_{j=1}^{p}x_{ij}\beta_{j}$ | `mu = intercept + pm.math.dot(X_train, beta)` | Calculates the predicted carbon footprint using the input variables and regression coefficients. |
 | **5. Likelihood function** | $y_{i} \sim N(\mu_{i}, \sigma^{2})$ | `pm.Normal("carbon_footprint", mu=mu, sigma=sigma, observed=y_train)` | Measures how likely the observed carbon footprint data are, given the predicted values and model parameters. |
-| **6. Posterior distribution (Bayes' Theorem)** | $P(\theta | D) = \frac{P(D |\theta)P(\theta)}{P(D)}$ | `trace = pm.sample(2000, tune=1000, cores=2, random_state=42, return_inferencedata=True)` | Updates the prior beliefs using the observed data to estimate the posterior distributions of the model parameters. |
-| **7. Posterior predictive distribution** | $P(y_{new} | D)$ | `pm.sample_posterior_predictive(trace, extend_inferencedata=True)` | Generates predicted carbon footprint values using posterior samples while accounting for uncertainty. |
+| **6. Posterior distribution (Bayes' Theorem)** |  | `trace = pm.sample(2000, tune=1000, cores=2, random_state=42, return_inferencedata=True)` | Updates the prior beliefs using the observed data to estimate the posterior distributions of the model parameters. |
+| **7. Posterior predictive distribution** | $P(y_{new}|D)$ | `pm.sample_posterior_predictive(trace, extend_inferencedata=True)` | Generates predicted carbon footprint values using posterior samples while accounting for uncertainty. |
 
 
 ## 5. Model Comparison Results
