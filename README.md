@@ -36,7 +36,7 @@ where:
 | **Posterior distribution (Bayes' Theorem)** | $P (\theta \mid D) = \frac{P(D \mid \theta) P(\theta)}{P(D)}$ | `trace = pm.sample(2000, tune=1000, cores=2, random_state=42, return_inferencedata=True)` | Updates the prior beliefs using the observed data to estimate the posterior distributions of the model parameters. |
 | **Posterior predictive distribution** | $P(y_{new} \mid D) = \int P(y_{new} \mid \theta) P(\theta \mid D) d\theta$ | `pm.sample_posterior_predictive(trace, extend_inferencedata=True)` | Generates predicted carbon footprint values using posterior samples while accounting for uncertainty. |
 
-In summary, the posterior distribution represents the balance between the prior and the likelihood. When the sample size is small, the prior generally has a stronger influence on the posterior. As the sample size increases, the likelihood contributes more information, and the posterior becomes increasingly influenced by the observed data. During Bayesian inference, pm.sample() uses MCMC sampling to generate many samples from the posterior distribution. These samples help estimate the regression coefficients, quantify uncertainty, and understand the possible values of the model parameters.
+During Bayesian inference, pm.sample() uses MCMC sampling to generate many samples from the posterior distribution. These samples help estimate the regression coefficients, quantify uncertainty, and understand the possible values of the model parameters.
 
 **Lasso** and **Ridge Regression** can also be connected to Bayesian Linear Regression. The key difference is that Lasso and Ridge use **regularisation** to control regression coefficients, while Bayesian Regression uses **prior probability distributions** to influence the coefficients.
 
