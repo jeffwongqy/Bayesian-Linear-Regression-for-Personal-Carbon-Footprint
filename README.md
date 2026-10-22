@@ -99,7 +99,7 @@ Overall comparison: All three models have closely aligned 95% ETI bounds, sugges
 
 <img width="1357" height="756" alt="model_coefficients" src="https://github.com/user-attachments/assets/ddb721f1-88b6-44ea-b755-903966ccb507" />
 
-- All three models produce almost identical coefficient means. Positive coefficients (e.g. beta[1], beta[2], beta[3] and beta[7]) indicate positive relationships with carbon footprint, while negative coefficients (beta[4], beta[5] and beta[8]) indicate negative relationships, assuming other variables remain constant.
+- All three models produce almost identical coefficient means. Positive coefficients (e.g. beta[1], beta[2], beta[3] and beta[7]) indicate positive relationships with carbon footprint, while negative coefficients (beta[4], beta[5], beta[6], and beta[8]) indicate negative relationships, assuming other variables remain constant.
 - Bayesian Ridge and Bayesian Lasso produce very similar coefficient estimates to Standard Bayesian Regression, suggesting that regularisation has little impact on the coefficients for this dataset.
 - All three models have R-hat values of 1.0 and sufficiently high effective sample sizes (ESS), suggesting good MCMC convergence and reliable posterior sampling.
 
