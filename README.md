@@ -36,15 +36,19 @@ where:
 | **Posterior distribution (Bayes' Theorem)** | $P (\theta \mid D) = \frac{P(D \mid \theta) P(\theta)}{P(D)}$ | `trace = pm.sample(2000, tune=1000, cores=2, random_state=42, return_inferencedata=True)` | Updates the prior beliefs using the observed data to estimate the posterior distributions of the model parameters. |
 | **Posterior predictive distribution** | $P(y_{new} \mid D) = \int P(y_{new} \mid \theta) P(\theta \mid D) d\theta$ | `pm.sample_posterior_predictive(trace, extend_inferencedata=True)` | Generates predicted carbon footprint values using posterior samples while accounting for uncertainty. |
 
-All in all, the PyMC model defines the prior distributions and likelihood. Bayes' Theorem determines the posterior distribution, while **pm.sample()** uses MCMC to approximate that posterior distribution.
-| Bayesian Concept | Mathematical Formula | Python Code | Brief Meaning |
-| :--- | :--- | :--- | :--- |
-| **Prior: Bayesian Ridge** | $\beta_{j} \sim N(0, \tau^{2})$ | `beta = pm.Normal("beta", mu=0, sigma=tau, shape=p)` | Uses a Normal prior to encourage coefficients towards zero. This corresponds to L2 regularisation under MAP estimation.|
-
+In summary, the posterior distribution represents the balance between the prior and the likelihood. When the sample size is small, the prior generally has a stronger influence on the posterior. As the sample size increases, the likelihood contributes more information, and the posterior becomes increasingly influenced by the observed data. During Bayesian inference, pm.sample() uses MCMC sampling to generate many samples from the posterior distribution. These samples help estimate the regression coefficients, quantify uncertainty, and understand the possible values of the model parameters.
 
 **Lasso** and **Ridge Regression** can also be connected to Bayesian Linear Regression. The key difference is that Lasso and Ridge use **regularisation** to control regression coefficients, while Bayesian Regression uses **prior probability distributions** to influence the coefficients.
 
 In fact, Ridge and Lasso can be interpreted from a Bayesian perspective by **choosing different prior distributions for the regression coefficients**.
+
+| Bayesian Concept | Mathematical Formula | Python Code | Brief Meaning |
+| :--- | :--- | :--- | :--- |
+| **Prior: Bayesian Ridge** | $\beta_{j} \sim N(0, \tau^{2})$ | `beta = pm.Normal("beta", mu=0, sigma=tau, shape=p)` | Uses a Normal prior to encourage coefficients towards zero. This corresponds to L2 regularisation under MAP estimation.|
+| **Prior: Bayesian Lasso** | $\beta_{j} \sim Laplace(0, b)$ | `beta = pm.Laplace("beta", mu=0, b=b, shape=p)` | Uses a Laplace prior to encourage coefficients towards zero, corresponding to L1 regularisation under MAP estimation.|
+
+
+
 
 
 
