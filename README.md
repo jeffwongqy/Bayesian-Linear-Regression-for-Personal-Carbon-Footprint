@@ -48,10 +48,6 @@ In fact, Ridge and Lasso can be interpreted from a Bayesian perspective by **cho
 | **Prior: Bayesian Lasso Regression Coefficients** | $\beta_{j} \sim Laplace(0, b)$ | `beta = pm.Laplace("beta", mu=0, b=b, shape=p)` | Uses a Laplace prior to encourage coefficients towards zero, corresponding to L1 regularisation under MAP estimation.|
 
 
-
-
-
-
 ## 4. Model Comparison Results
 
 <img width="800" height="250" alt="results" src="https://github.com/user-attachments/assets/c3cfb107-1b5b-49f7-a406-4d4e0b0fd702" />
@@ -62,14 +58,16 @@ In fact, Ridge and Lasso can be interpreted from a Bayesian perspective by **cho
 - Bayesian Lasso Regression also performs similarly, with an RMSE of 0.7620 and R² of 0.9230.
 - Overall, the standard Bayesian Regression achieves the best numerical results, but the differences are extremely small. All three models explain approximately 92.3% of the variance in the target variable, suggesting that Ridge and Lasso regularisation provide no meaningful improvement in predictive accuracy for this dataset.
 
+
 ## 5. Posterior Predictive Checks
 
 ### 5.1 PPC Plot
 <img width="1397" height="481" alt="PPC" src="https://github.com/user-attachments/assets/fea52f36-5f67-465c-8b7d-6ce69cfe3963" />
 
-- Across all three models (Standard, Ridge, and Lasso bayesian Regression), the posterior predictive distributions (blue lines) and their mean (orange dashed curve) track the observed data distribution (solid black curve) remarkbly well. This indicates that the models have successfully captured the underlying data-generating process for personal carbon footprints.
-- The peak density - centered around a carbon footprint value of 7.5 to 8.0 is accurately captured by the posterior repliaces in all three variants. The dispersion, spread, and overall bell-shaped contour closely mirror the empirical distribution.
-- There are visible graphical discrepancies or structural differences among the Standard, Ridge, and Lasso PPC plots.
+- Standard Bayesian Regression: The posterior predictive curves closely follow the observed distribution, indicating a good fit to the carbon footprint data.
+- Bayesian Ridge Regression: The predictive curves also closely match the observed data, showing that Ridge regularisation maintains similar predictive performance.
+- Bayesian Lasso Regression: The results are similarly aligned with the observed distribution, suggesting that Lasso regularisation also provides a good fit.
+Overall: All three models produce very similar posterior predictive distributions, indicating that their predictions are consistent with the observed data, with no substantial difference in model fit.
 
 ### 5.2 PPC HDIs and ETIs
 
