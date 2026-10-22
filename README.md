@@ -62,13 +62,11 @@ In fact, Ridge and Lasso can be interpreted from a Bayesian perspective by **cho
 ## 5. Posterior Predictive Checks
 PPC generates simulated data based on the fitted Bayesian model, which has learned from the original observed data.
 
-The process is:
-1. **Original data:** Your carbon footprint dataset is used to fit the Bayesian regression model.
-2. **Posterior sampling (pm.sample()):** The model estimates possible values of the regression coefficients and error variance using the original data. (10,000 sets of model parameters)
-3. **Posterior predictive sampling (pm.sample_posterior_predictive()):** Uses those estimated parameters to generate new simulated carbon footprint values.(10,000 simulated datasets x 100 predicted values)
-4. **PPC comparison:** Compares the simulated data (posterior predictive mean) against the original observed data to assess how well the model fits.
-
-In simple terms, PPC does not simply copy the original data. It generates new simulated data based on what the Bayesian model has learned from the original data.
+Process:
+1. Model Fitting: The Bayesian regression model learns the underlying patterns directly from your original carbon footprint dataset.
+2. Parameter Estimation (pm.sample()): The model runs 10,000 simulations to calculate a highly accurate range of likely values for the regression coefficients and error variance.
+3. Synthetic Data Generation (pm.sample_posterior_predictive()): Using these 10,000 learned parameter sets, the model generates simulated carbon footprint values to create 10,000 new predicted datasets.
+4. Model Validation (PPC): The average of the simulated data is compared against your original observed data to evaluate how accurately the model replicates reality.
 
 Why is it necessary?
 - Determines whether the model captures the patterns in the observed data.
