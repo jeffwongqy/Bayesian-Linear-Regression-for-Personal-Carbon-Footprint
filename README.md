@@ -75,6 +75,8 @@ Why is it necessary?
 - **Build confidence:** Helps assess whether the model is reasonably suitable for describing and predicting the data.
 
 ### 5.1 PPC Plot
+Compares simulated data generated from the Bayesian model against the observed data to assess how well the model reproduces the actual data distribution.
+
 <img width="1397" height="481" alt="PPC" src="https://github.com/user-attachments/assets/fea52f36-5f67-465c-8b7d-6ce69cfe3963" />
 
 - Standard Bayesian Regression: The posterior predictive curves closely follow the observed distribution, indicating a good fit to the carbon footprint data.
@@ -87,8 +89,9 @@ Overall: All three models produce very similar posterior predictive distribution
 
 <img width="830" height="751" alt="PPC2" src="https://github.com/user-attachments/assets/155cdec8-9c6c-4e7b-8f0b-030f4c03e1b0" />
 
-- The interval bounds for the first five data points are remarkbly consistent across all three models. For instance, the first observation's lower ETI bounds are nearly identical, and upper bounds range are similar as well. This demonstrates that applying Ridge or Lasso regularizing priors introduces negligible variation in the predictive uncertainity distributions compared to the unstandardized baseline.
-- The interval widths reflect the inherent residual variance captured by the models, providing robust upper and lower bounds for individual personal carbon footprint predictions at a 95% confidence level.
+- Standard Bayesian Regression: The 95% ETI lower and upper bounds are approximately 7.07–10.10 for the first observation. Ridge and Lasso produce very similar intervals, indicating comparable predictive uncertainty across all three models.
+
+Overall comparison: All three models have closely aligned 95% ETI bounds, suggesting that their posterior predictive distributions are very similar. Neither Ridge nor Lasso provides a substantial difference in predictive uncertainty compared with Standard Bayesian Regression.
 
 
 ## 6. Coefficients Interpretation
