@@ -91,7 +91,7 @@ HDIs is the range containing a specified proportion of the posterior probability
 
 <img width="830" height="751" alt="PPC2" src="https://github.com/user-attachments/assets/155cdec8-9c6c-4e7b-8f0b-030f4c03e1b0" />
 
-- Standard Bayesian Regression: The 95% ETI lower and upper bounds are approximately 7.07–10.10 for the first observation.
+- In Standard Bayesian Regression, the 95% ETI lower and upper bounds are approximately 7.07–10.10 for the first observation.
 - Ridge and Lasso produce very similar intervals, indicating comparable predictive uncertainty across all three models.
 
 Overall comparison: All three models have closely aligned 95% ETI bounds, suggesting that their posterior predictive distributions are very similar. Neither Ridge nor Lasso provides a substantial difference in predictive uncertainty compared with Standard Bayesian Regression.
