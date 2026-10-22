@@ -44,8 +44,8 @@ In fact, Ridge and Lasso can be interpreted from a Bayesian perspective by **cho
 
 | Bayesian Concept | Mathematical Formula | Python Code | Brief Meaning |
 | :--- | :--- | :--- | :--- |
-| **Prior: Bayesian Ridge** | $\beta_{j} \sim N(0, \tau^{2})$ | `beta = pm.Normal("beta", mu=0, sigma=tau, shape=p)` | Uses a Normal prior to encourage coefficients towards zero. This corresponds to L2 regularisation under MAP estimation.|
-| **Prior: Bayesian Lasso** | $\beta_{j} \sim Laplace(0, b)$ | `beta = pm.Laplace("beta", mu=0, b=b, shape=p)` | Uses a Laplace prior to encourage coefficients towards zero, corresponding to L1 regularisation under MAP estimation.|
+| **Prior: Bayesian Ridge Regression Coefficients** | $\beta_{j} \sim N(0, \tau^{2})$ | `beta = pm.Normal("beta", mu=0, sigma=tau, shape=p)` | Uses a Normal prior to encourage coefficients towards zero. This corresponds to L2 regularisation under MAP estimation.|
+| **Prior: Bayesian Lasso Regression Coefficients** | $\beta_{j} \sim Laplace(0, b)$ | `beta = pm.Laplace("beta", mu=0, b=b, shape=p)` | Uses a Laplace prior to encourage coefficients towards zero, corresponding to L1 regularisation under MAP estimation.|
 
 
 
