@@ -65,9 +65,15 @@ In fact, Ridge and Lasso can be interpreted from a Bayesian perspective by **cho
 In simple terms, it checks whether the model can reproduce the patterns and distribution of the original dataset.
 
 How does it work?
-1. Generate predictions: Use **pm.sample_posterior_predictive()** to generate simulated data based on samples from the posterior distribution.
-2. Compare distributions: Compare the simulated predictions (posterior predictive) against the actual observed data.
-3. Assess model fit: Check whether the predicted distributions closely match the observed distribution.
+1. **Generate predictions:** Use **pm.sample_posterior_predictive()** to generate simulated data based on samples from the posterior distribution.
+2. **Compare distributions:** Compare the simulated predictions (posterior predictive) against the actual observed data.
+3. **Assess model fit:** Check whether the predicted distributions closely match the observed distribution.
+
+Why is it necessary?
+- **Evaluate model fit:** Determines whether the model captures the patterns in the observed data.
+- **Identify potential problems:** Highlights differences between predicted and observed distributions, such as incorrect spread, skewness, or extreme values.
+- **Build confidence:** Helps assess whether the model is reasonably suitable for describing and predicting the data.
+
 ### 5.1 PPC Plot
 <img width="1397" height="481" alt="PPC" src="https://github.com/user-attachments/assets/fea52f36-5f67-465c-8b7d-6ce69cfe3963" />
 
