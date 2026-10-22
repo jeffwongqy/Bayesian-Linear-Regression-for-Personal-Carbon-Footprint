@@ -71,9 +71,9 @@ The process is:
 In simple terms, PPC does not simply copy the original data. It generates new simulated data based on what the Bayesian model has learned from the original data.
 
 Why is it necessary?
-- **Evaluate model fit:** Determines whether the model captures the patterns in the observed data.
-- **Identify potential problems:** Highlights differences between predicted and observed distributions, such as incorrect spread, skewness, or extreme values.
-- **Build confidence:** Helps assess whether the model is reasonably suitable for describing and predicting the data.
+- Determines whether the model captures the patterns in the observed data.
+- Highlights differences between predicted and observed distributions, such as incorrect spread, skewness, or extreme values.
+- Helps assess whether the model is reasonably suitable for describing and predicting the data.
 
 ### 5.1 PPC Plot
 Compares simulated data generated from the Bayesian model against the observed data to assess how well the model reproduces the actual data distribution.
