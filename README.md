@@ -67,6 +67,7 @@ In fact, Ridge and Lasso can be interpreted from a Bayesian perspective by **cho
 - Standard Bayesian Regression: The posterior predictive curves closely follow the observed distribution, indicating a good fit to the carbon footprint data.
 - Bayesian Ridge Regression: The predictive curves also closely match the observed data, showing that Ridge regularisation maintains similar predictive performance.
 - Bayesian Lasso Regression: The results are similarly aligned with the observed distribution, suggesting that Lasso regularisation also provides a good fit.
+
 Overall: All three models produce very similar posterior predictive distributions, indicating that their predictions are consistent with the observed data, with no substantial difference in model fit.
 
 ### 5.2 PPC HDIs and ETIs
