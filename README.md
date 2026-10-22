@@ -66,7 +66,7 @@ The process is:
 1. **Original data:** Your carbon footprint dataset is used to fit the Bayesian regression model.
 2. **Posterior sampling (pm.sample()):** The model estimates possible values of the regression coefficients and error variance using the original data. (10,000 sets of model parameters)
 3. **Posterior predictive sampling (pm.sample_posterior_predictive()):** Uses those estimated parameters to generate new simulated carbon footprint values.(10,000 simulated datasets x 100 predicted values)
-4. **PPC comparison:** Compares the simulated data against the original observed data to assess how well the model fits.
+4. **PPC comparison:** Compares the simulated data (posterior predictive mean) against the original observed data to assess how well the model fits.
 
 In simple terms, PPC does not simply copy the original data. It generates new simulated data based on what the Bayesian model has learned from the original data.
 
