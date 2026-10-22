@@ -60,7 +60,14 @@ In fact, Ridge and Lasso can be interpreted from a Bayesian perspective by **cho
 
 
 ## 5. Posterior Predictive Checks
+**Posterior Predictive Checking (PPC)** is a method used in Bayesian statistics to evaluate whether a fitted model can generate predictions that resemble the actual observed data.
 
+In simple terms, it checks whether the model can reproduce the patterns and distribution of the original dataset.
+
+How does it work?
+1. Generate predictions: Use **pm.sample_posterior_predictive()** to generate simulated data based on samples from the posterior distribution.
+2. Compare distributions: Compare the simulated predictions (posterior predictive) against the actual observed data.
+3. Assess model fit: Check whether the predicted distributions closely match the observed distribution.
 ### 5.1 PPC Plot
 <img width="1397" height="481" alt="PPC" src="https://github.com/user-attachments/assets/fea52f36-5f67-465c-8b7d-6ce69cfe3963" />
 
