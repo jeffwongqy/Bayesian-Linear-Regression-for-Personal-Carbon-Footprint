@@ -36,7 +36,11 @@ where:
 | **Posterior distribution (Bayes' Theorem)** | $P (\theta \mid D) = \frac{P(D \mid \theta) P(\theta)}{P(D)}$ | `trace = pm.sample(2000, tune=1000, cores=2, random_state=42, return_inferencedata=True)` | Updates the prior beliefs using the observed data to estimate the posterior distributions of the model parameters. |
 | **Posterior predictive distribution** | $P(y_{new} \mid D) = \int P(y_{new} \mid \theta) P(\theta \mid D) d\theta$ | `pm.sample_posterior_predictive(trace, extend_inferencedata=True)` | Generates predicted carbon footprint values using posterior samples while accounting for uncertainty. |
 
-All in all, the PyMC model defines the prior distributions and likelihood. Bayes' Theorem determines the posterior distribution, while pm.sample() uses MCMC to approximate that posterior distribution.
+All in all, the PyMC model defines the prior distributions and likelihood. Bayes' Theorem determines the posterior distribution, while **pm.sample()** uses MCMC to approximate that posterior distribution.
+| Bayesian Concept | Mathematical Formula | Python Code | Brief Meaning |
+| :--- | :--- | :--- | :--- |
+| **Prior: Bayesian Ridge** | $\beta_{j} \sim N(0, \tau^{2})$ | `beta = pm.Normal("beta", mu=0, sigma=tau, shape=p)` | Uses a Normal prior to encourage coefficients towards zero. This corresponds to L2 regularisation under MAP estimation.|
+
 
 **Lasso** and **Ridge Regression** can also be connected to Bayesian Linear Regression. The key difference is that Lasso and Ridge use **regularisation** to control regression coefficients, while Bayesian Regression uses **prior probability distributions** to influence the coefficients.
 
