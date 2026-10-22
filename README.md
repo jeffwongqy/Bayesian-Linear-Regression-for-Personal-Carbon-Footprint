@@ -86,6 +86,7 @@ Compares simulated data generated from the Bayesian model against the observed d
 Overall: All three models produce very similar posterior predictive distributions, indicating that their predictions are consistent with the observed data, with no substantial difference in model fit.
 
 ### 5.2 PPC HDIs and ETIs
+HDIs is the range containing a specified proportion of the posterior probability. A 95% HDI represents the interval containing the most probable 95% of the posterior distribution. ETIs is the interval between the 2.5th and 97.5th percentiles for a 95% interval, leaving 2.5% probability in each tail.
 
 <img width="830" height="751" alt="PPC2" src="https://github.com/user-attachments/assets/155cdec8-9c6c-4e7b-8f0b-030f4c03e1b0" />
 
