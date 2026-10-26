@@ -76,7 +76,7 @@ The PPC plot compares the distribution of the original observed carbon footprint
 - Bayesian Ridge Regression: The predictive curves also closely match the observed data, showing that Ridge regularisation maintains similar predictive performance.
 - Bayesian Lasso Regression: The results are similarly aligned with the observed distribution, suggesting that Lasso regularisation also provides a good fit.
 
-Overall: All three models produce very similar posterior predictive distributions, indicating that their predictions are consistent with the observed data, with no substantial difference in model fit.
+All three models produce very similar posterior predictive distributions, indicating that their predictions are consistent with the observed data, with no substantial difference in model fit.
 
 ### 5.2 PPC HDIs and ETIs
 HDIs is the range containing a specified proportion of the posterior probability. A 95% HDI represents the interval containing the most probable 95% of the posterior distribution. ETIs is the interval between the 2.5th and 97.5th percentiles for a 95% interval, leaving 2.5% probability in each tail.
@@ -86,7 +86,7 @@ HDIs is the range containing a specified proportion of the posterior probability
 - In Standard Bayesian Regression, the 95% ETI lower and upper bounds are approximately 7.07–10.10 for the first observation.
 - Ridge and Lasso produce very similar intervals, indicating comparable predictive uncertainty across all three models.
 
-Overall comparison: All three models have closely aligned 95% ETI bounds, suggesting that their posterior predictive distributions are very similar. Neither Ridge nor Lasso provides a substantial difference in predictive uncertainty compared with Standard Bayesian Regression.
+All three models have closely aligned 95% ETI bounds, suggesting that their posterior predictive distributions are very similar. Neither Ridge nor Lasso provides a substantial difference in predictive uncertainty compared with Standard Bayesian Regression.
 
 
 ## 6. Coefficients Interpretation
