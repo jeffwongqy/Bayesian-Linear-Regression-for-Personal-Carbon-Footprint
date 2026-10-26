@@ -49,6 +49,7 @@ In fact, Ridge and Lasso can be interpreted from a Bayesian perspective by **cho
 
 
 ## 4. Model Comparison Results
+The posterior mean values of the regression coefficients (beta) and intercept are extracted by averaging the n posterior samples across all chains and draws. These mean values represent the model's estimated parameters and are used to make predictions on the unseen test dataset (X_test). By combining the estimated intercept with the weighted sum of the input features and their corresponding beta coefficients, the model generates predicted carbon footprint values (y_pred_bayes). These predictions are then compared against the actual test values to evaluate the model's predictive performance.
 
 <img width="800" height="250" alt="results" src="https://github.com/user-attachments/assets/c3cfb107-1b5b-49f7-a406-4d4e0b0fd702" />
 
@@ -60,7 +61,7 @@ In fact, Ridge and Lasso can be interpreted from a Bayesian perspective by **cho
 
 
 ## 5. Posterior Predictive Checks
-Posterior Predictive Checking (PPC) evaluates how well the fitted Bayesian regression model represents the original carbon footprint data. First, the model learns the underlying patterns from the observed data. Next, pm.sample() generates 10,000 samples from the posterior distribution to estimate likely values for the regression coefficients and error variance. Then, pm.sample_posterior_predictive() uses these 10,000 sets of estimated parameters to generate 10,000 simulated datasets of carbon footprint values. Finally, the simulated results are compared with the original observed data to assess whether the model can reasonably reproduce the patterns and variations found in the actual data.
+Posterior Predictive Checking (PPC) evaluates how well the fitted Bayesian regression model represents the original carbon footprint data. First, the model learns the underlying patterns from the observed data. Next, pm.sample() generates n samples from the posterior distribution to estimate likely values for the regression coefficients and error variance. Then, pm.sample_posterior_predictive() uses these n sets of estimated parameters to generate k simulated datasets per n sets of carbon footprint values. Finally, the simulated results are compared with the original observed data to assess whether the model can reasonably reproduce the patterns and variations found in the actual data.
 
 Why is it necessary?
 - Determines whether the model captures the patterns in the observed data.
